@@ -113,7 +113,7 @@ public abstract class Session<S extends Session<S,R>, R extends Resource<S,R>> {
       initializeBell = (ib != null) ? ib : Bell.rungBell();
     } catch (Exception e) {
       initializeBell = new Bell<S>(e);
-    } return initializeBell.as(this);
+    } return initializeBell.as(this).debugOnRing();
   }
 
   /**

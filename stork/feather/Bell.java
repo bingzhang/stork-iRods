@@ -500,7 +500,7 @@ public class Bell<T> implements Future<T> {
   public final <V> Bell<V> as(final V done) {
     final Bell<V> bell = new Bell<V>();
     new Promise() {
-      public void then() { bell.ring(done); }
+      public void done() { bell.ring(done); }
       public void fail(Throwable t) { bell.ring(t); }
     };
     return bell;
